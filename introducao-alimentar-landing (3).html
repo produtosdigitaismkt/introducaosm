@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução Alimentar do Seu Bebê — Passo a Passo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF6F0;
+    --warm-white: #FFFCF8;
+    --terracotta: #C8614A;
+    --terra-light: #F0C4B8;
+    --terra-dark: #8C3D2B;
+    --sage: #7A9E7E;
+    --sage-light: #C8DBC9;
+    --sage-dark: #4A6E4E;
+    --brown: #5C3D2E;
+    --brown-light: #9C7B6A;
+    --gold: #D4A843;
+    --text: #2E1F14;
+    --text-muted: #7A6055;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 1.2; }
+  p { font-size: 1rem; color: var(--text-muted); }
+  strong { color: var(--text); font-weight: 500; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: var(--terra-light);
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: var(--sage-light);
+    opacity: 0.35;
+    z-index: 0;
+  }
+
+  .hero-content {
+    padding: 80px 60px 80px 80px;
+    position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--terra-light);
+    color: var(--terra-dark);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--terracotta);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    color: var(--terracotta);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--brown-light);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 440px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--terracotta);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 18px 36px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.15s;
+    box-shadow: 0 8px 30px rgba(200, 97, 74, 0.35);
+  }
+
+  .btn-primary:hover { background: var(--terra-dark); transform: translateY(-2px); }
+  .btn-primary::after { content: '→'; font-size: 1.1rem; }
+
+  .hero-trust {
+    display: flex; align-items: center; gap: 20px;
+    margin-top: 28px;
+  }
+
+  .hero-trust-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .hero-trust-item svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  .hero-visual {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px 40px;
+  }
+
+  .book-mockup {
+    position: relative;
+    width: 280px;
+  }
+
+  .book-cover {
+    width: 280px;
+    aspect-ratio: 3/4;
+    background: linear-gradient(145deg, var(--terracotta) 0%, var(--terra-dark) 100%);
+    border-radius: 4px 16px 16px 4px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 36px 28px;
+    box-shadow: -8px 8px 40px rgba(0,0,0,0.2), inset 4px 0 10px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 30px,
+      rgba(255,255,255,0.03) 30px,
+      rgba(255,255,255,0.03) 31px
+    );
+  }
+
+  .book-spine {
+    position: absolute;
+    left: -14px; top: 0; bottom: 0;
+    width: 14px;
+    background: var(--terra-dark);
+    border-radius: 4px 0 0 4px;
+    box-shadow: -3px 4px 15px rgba(0,0,0,0.25);
+  }
+
+  .book-cover-inner { position: relative; z-index: 1; text-align: center; }
+
+  .book-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .book-title-cover {
+    font-family: var(--font-serif);
+    color: rgba(255,255,255,0.95);
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .book-subtitle-cover {
+    font-family: var(--font-sans);
+    color: rgba(255,255,255,0.65);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .book-badge-cover {
+    position: absolute;
+    bottom: 20px; right: -12px;
+    background: var(--gold);
+    color: #3A2800;
+    border-radius: 50%;
+    width: 72px; height: 72px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    line-height: 1.3;
+    text-align: center;
+    padding: 8px;
+  }
+
+  .book-badge-cover strong { font-size: 1rem; display: block; }
+
+  /* ─── PAIN SECTION ─── */
+  .pain-section {
+    background: var(--text);
+    padding: 100px 80px;
+    text-align: center;
+  }
+
+  .pain-section h2 {
+    color: var(--terra-light);
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 16px;
+  }
+
+  .pain-section > p {
+    color: rgba(255,255,255,0.55);
+    max-width: 560px;
+    margin: 0 auto 60px;
+    font-size: 1.05rem;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .pain-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: left;
+  }
+
+  .pain-card .pain-icon { font-size: 24px; margin-bottom: 12px; display: block; }
+  .pain-card p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
+
+  .pain-cta {
+    margin-top: 60px;
+  }
+
+  .pain-cta p {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+    font-style: italic;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+  }
+
+  /* ─── SOLUTION SECTION ─── */
+  .solution-section {
+    padding: 100px 80px;
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    background: var(--sage-light);
+    border-radius: 100px;
+  }
+
+  .solution-section h2 {
+    font-size: clamp(2rem, 2.8vw, 2.8rem);
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  .solution-section h2 em { color: var(--terracotta); font-style: italic; }
+
+  .solution-list {
+    list-style: none;
+    margin-top: 28px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+
+  .solution-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .check {
+    width: 22px; height: 22px;
+    background: var(--sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+
+  .check::after {
+    content: '';
+    width: 10px; height: 6px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg) translateY(-1px);
+  }
+
+  .solution-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+
+  .stat-card {
+    background: var(--cream);
+    border: 1px solid var(--terra-light);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .stat-card .stat-num {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .stat-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* ─── CONTENT SECTION ─── */
+  .content-section {
+    padding: 100px 80px;
+    background: var(--cream);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-header h2 { font-size: clamp(2rem, 3vw, 2.8rem); color: var(--text); margin-top: 12px; }
+  .section-header p { max-width: 500px; margin: 16px auto 0; font-size: 1rem; }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .module-card {
+    background: var(--warm-white);
+    border: 1px solid var(--terra-light);
+    border-radius: 20px;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(200, 97, 74, 0.12);
+  }
+
+  .module-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--terracotta);
+  }
+
+  .module-num {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--terra-light);
+    line-height: 1;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .module-card h3 {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .module-card p { font-size: 0.9rem; line-height: 1.7; }
+
+  /* ─── BONUS SECTION ─── */
+  .bonus-section {
+    background: var(--sage-dark);
+    padding: 100px 80px;
+    text-align: center;
+  }
+
+  .bonus-section .section-label {
+    background: rgba(255,255,255,0.15);
+    color: var(--sage-light);
+  }
+
+  .bonus-section h2 {
+    color: #fff;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    margin-top: 12px;
+    margin-bottom: 16px;
+  }
+
+  .bonus-section > p {
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    margin: 0 auto 60px;
+  }
+
+  .bonus-grid {
+    display: flex;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bonus-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 32px 24px;
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    text-align: left;
+  }
+
+  .bonus-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+  .bonus-card h3 { font-family: var(--font-serif); color: #fff; font-size: 1.2rem; margin-bottom: 10px; }
+  .bonus-card p { color: rgba(255,255,255,0.65); font-size: 0.88rem; }
+
+  .bonus-ribbon {
+    display: inline-block;
+    background: var(--gold);
+    color: #3A2800;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials-section {
+    padding: 100px 80px;
+    background: var(--warm-white);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .testimonial-card {
+    background: var(--cream);
+    border: 1px solid var(--terra-light);
+    border-radius: 20px;
+    padding: 32px 24px;
+  }
+
+  .stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; display: block; }
+
+  .testimonial-card blockquote {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+  .avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--terra-light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--terra-dark);
+    flex-shrink: 0;
+  }
+
+  .testimonial-author div strong { display: block; font-size: 0.9rem; color: var(--text); font-weight: 500; }
+  .testimonial-author div span { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* ─── PRICING / CTA ─── */
+  .pricing-section {
+    padding: 100px 40px;
+    background: var(--cream);
+    text-align: center;
+  }
+
+  .pricing-card {
+    background: var(--warm-white);
+    border: 2px solid var(--terracotta);
+    border-radius: 28px;
+    max-width: 520px;
+    margin: 60px auto 0;
+    padding: 52px 48px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(200, 97, 74, 0.12);
+  }
+
+  .popular-tag {
+    position: absolute;
+    top: -16px; left: 50%; transform: translateX(-50%);
+    background: var(--terracotta);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .price-old {
+    font-size: 1rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .price-main {
+    display: flex; align-items: flex-start; justify-content: center;
+    gap: 4px; margin-bottom: 8px;
+  }
+
+  .price-currency {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-top: 14px;
+  }
+
+  .price-value {
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    color: var(--terracotta);
+    line-height: 1;
+    font-weight: 300;
+  }
+
+  .price-cents {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--terracotta);
+    margin-top: 10px;
+  }
+
+  .price-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    display: block;
+  }
+
+  .price-includes {
+    list-style: none;
+    margin: 28px 0 36px;
+    text-align: left;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  .price-includes li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .pi-check {
+    width: 20px; height: 20px;
+    background: var(--sage-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .pi-check::after {
+    content: '';
+    width: 8px; height: 5px;
+    border-left: 1.5px solid var(--sage-dark);
+    border-bottom: 1.5px solid var(--sage-dark);
+    transform: rotate(-45deg) translateY(-1px);
+  }
+
+  .btn-cta-big {
+    display: block;
+    background: var(--terracotta);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 20px 40px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.15s;
+    box-shadow: 0 10px 35px rgba(200, 97, 74, 0.35);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .btn-cta-big:hover { background: var(--terra-dark); transform: translateY(-2px); }
+
+  .guarantee {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+
+  /* ─── FAQ ─── */
+  .faq-section {
+    padding: 100px 80px;
+    background: var(--warm-white);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--terra-light);
+    padding: 24px 0;
+  }
+
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+    gap: 20px;
+  }
+
+  .faq-q h3 {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .faq-toggle {
+    width: 28px; height: 28px; flex-shrink: 0;
+    border: 1px solid var(--terra-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--terracotta);
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: background 0.2s;
+    user-select: none;
+  }
+
+  .faq-item:hover .faq-toggle { background: var(--terra-light); }
+
+  .faq-a {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  .faq-a p {
+    padding-top: 16px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .faq-item.open .faq-a { max-height: 300px; }
+  .faq-item.open .faq-toggle { background: var(--terracotta); color: #fff; border-color: var(--terracotta); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.82rem;
+  }
+
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+  /* ─── STICKY CTA ─── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+  }
+
+  .sticky-cta.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+  .sticky-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--terracotta);
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 8px 28px rgba(200, 97, 74, 0.4);
+    transition: background 0.2s;
+  }
+
+  .sticky-btn:hover { background: var(--terra-dark); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding-bottom: 0; }
+    .hero-content { padding: 60px 24px 40px; }
+    .hero-visual { padding: 20px 24px 60px; }
+    .book-mockup { width: 220px; }
+    .book-cover { width: 220px; }
+    .pain-section, .content-section, .bonus-section,
+    .testimonials-section, .faq-section { padding: 70px 24px; }
+    .solution-section { grid-template-columns: 1fr; padding: 70px 24px; gap: 40px; }
+    .pricing-card { padding: 40px 24px; margin-top: 40px; }
+    .hero-trust { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Guia definitivo para mães e pais de primeira viagem</div>
+
+    <h1>
+      Introdução<br>
+      Alimentar do<br>
+      seu <em>Bebê</em>
+    </h1>
+
+    <p class="hero-sub">Passo a passo, sem complicação.</p>
+
+    <p class="hero-desc">
+      Chega de noites em claro buscando no Google. Descubra exatamente
+      <strong>o que oferecer, quando e como</strong> — com confiança, segurança e
+      muito amor na medida certa.
+    </p>
+
+    <a href="#oferta" class="btn-primary">Quero começar agora</a>
+
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 1L10.06 5.26L14.73 5.94L11.36 9.22L12.12 13.87L8 11.71L3.88 13.87L4.64 9.22L1.27 5.94L5.94 5.26L8 1Z" fill="#D4A843" stroke="#D4A843" stroke-width="1" stroke-linejoin="round"/>
+        </svg>
+        Aprovado por nutricionistas
+      </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="7" stroke="#7A9E7E" stroke-width="1.5"/>
+          <path d="M5 8L7 10L11 6" stroke="#7A9E7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Download imediato
+      </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="12" height="9" rx="2" stroke="#7A6055" stroke-width="1.5"/>
+          <path d="M5 6V4.5C5 2.84 6.34 1.5 8 1.5C9.66 1.5 11 2.84 11 4.5V6" stroke="#7A6055" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        7 dias de garantia
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="book-mockup">
+      <div class="book-spine"></div>
+      <div class="book-cover">
+        <div class="book-cover-inner">
+          <span class="book-icon">🍎</span>
+          <p class="book-title-cover">Introdução Alimentar do seu Bebê</p>
+          <p class="book-subtitle-cover">Passo a Passo</p>
+        </div>
+      </div>
+      <div class="book-badge-cover"><strong>+3</strong>bônus incluídos</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ DOR -->
+<section class="pain-section">
+  <h2>Você se identifica com isso?</h2>
+  <p>A introdução alimentar deveria ser uma festa — mas muitas vezes vira uma fonte de ansiedade.</p>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <span class="pain-icon">😰</span>
+      <p><strong style="color:#fff">Medo de engasgo</strong> toda vez que oferece um alimento novo ao bebê.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-icon">🔎</span>
+      <p><strong style="color:#fff">Horas no Google</strong> tentando entender o que pode ou não oferecer.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-icon">🤯</span>
+      <p><strong style="color:#fff">Informações conflitantes</strong> de todos os lados — família, pediatra, Instagram.</p>
+    </div>
+    <div class="pain-card">
+      <span class="pain-icon">😓</span>
+      <p><strong style="color:#fff">Sem rotina definida</strong> e sem saber o que preparar nos próximos dias.</p>
+    </div>
+  </div>
+
+  <div class="pain-cta">
+    <p>Se você marcou sim para qualquer um desses itens, este ebook foi feito para você.</p>
+    <a href="#oferta" class="btn-primary">Quero resolver isso agora</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ SOLUÇÃO -->
+<div style="background: var(--warm-white);">
+<section class="solution-section">
+  <div>
+    <span class="section-label">A solução</span>
+    <h2>Tudo o que você precisa em um <em>único lugar</em></h2>
+    <p style="margin-bottom: 0;">Um guia prático, visual e acolhedor para navegar pelos primeiros meses de alimentação do seu bebê com segurança e leveza.</p>
+
+    <ul class="solution-list">
+      <li><span class="check"></span>Linguagem simples, sem jargão médico</li>
+      <li><span class="check"></span>Cardápio semanal pronto para seguir</li>
+      <li><span class="check"></span>Tabela de alimentos por faixa de idade</li>
+      <li><span class="check"></span>Dicas de consistência e preparo</li>
+      <li><span class="check"></span>Respostas para as dúvidas mais comuns</li>
+    </ul>
+  </div>
+
+  <div class="solution-stats">
+    <div class="stat-card">
+      <span class="stat-num">6+</span>
+      <p>meses de conteúdo estruturado</p>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">50+</span>
+      <p>receitas e combinações testadas</p>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">3</span>
+      <p>bônus exclusivos incluídos</p>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">0</span>
+      <p>pesquisa extra necessária</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ═══════════════════════════════════════════ CONTEÚDO -->
+<section class="content-section">
+  <div class="section-header">
+    <span class="section-label">O que está dentro</span>
+    <h2>Conteúdo completo e organizado</h2>
+    <p>Cada módulo foi criado para acompanhar você em cada fase da jornada alimentar.</p>
+  </div>
+
+  <div class="modules-grid">
+    <div class="module-card">
+      <span class="module-num">01</span>
+      <h3>Por onde começar</h3>
+      <p>Entenda os sinais de prontidão, a janela ideal para iniciar e os primeiros passos com segurança.</p>
+    </div>
+    <div class="module-card">
+      <span class="module-num">02</span>
+      <h3>Alimentos permitidos e proibidos</h3>
+      <p>Tabela completa por faixa etária: o que oferece, quando e em qual textura.</p>
+    </div>
+    <div class="module-card">
+      <span class="module-num">03</span>
+      <h3>Consistências e texturas</h3>
+      <p>Da papinha ao BLW: entenda as diferenças, vantagens e como avançar no tempo certo.</p>
+    </div>
+    <div class="module-card">
+      <span class="module-num">04</span>
+      <h3>Rotina e planejamento</h3>
+      <p>Organize os horários, monte o cardápio da semana e reduza o estresse do dia a dia.</p>
+    </div>
+    <div class="module-card">
+      <span class="module-num">05</span>
+      <h3>Alergias e sinais de alerta</h3>
+      <p>Como identificar reações, o que fazer no momento certo e quando procurar ajuda médica.</p>
+    </div>
+    <div class="module-card">
+      <span class="module-num">06</span>
+      <h3>Receitas práticas</h3>
+      <p>Mais de 50 combinações saborosas e nutritivas, com tempo de preparo de até 15 minutos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ BÔNUS -->
+<section class="bonus-section">
+  <span class="section-label">Bônus exclusivos</span>
+  <h2>Três presentes para você</h2>
+  <p>Além do ebook completo, você recebe estes materiais de apoio sem custo adicional.</p>
+
+  <div class="bonus-grid">
+    <div class="bonus-card">
+      <span class="bonus-ribbon">Bônus 1</span>
+      <span class="bonus-icon">📅</span>
+      <h3>Cardápio Semanal Inteligente</h3>
+      <p>Plano completo de 7 dias, com café da manhã, almoço e jantar. É só seguir!</p>
+    </div>
+    <div class="bonus-card">
+      <span class="bonus-ribbon">Bônus 2</span>
+      <span class="bonus-icon">🛒</span>
+      <h3>Lista de Compras Estratégica</h3>
+      <p>Organize as compras do mês sem desperdício e sem esquecer nenhum ingrediente essencial.</p>
+    </div>
+    <div class="bonus-card">
+      <span class="bonus-ribbon">Bônus 3</span>
+      <span class="bonus-icon">🖨️</span>
+      <h3>Planner de Refeições Imprimível</h3>
+      <p>Cole na geladeira e tenha a semana toda organizada de um jeito lindo e prático.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ DEPOIMENTOS -->
+<div style="background: var(--warm-white);">
+<section class="testimonials-section">
+  <div class="section-header">
+    <span class="section-label">Depoimentos</span>
+    <h2>Mães que transformaram a rotina</h2>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <span class="stars">★★★★★</span>
+      <blockquote>"Finalmente parei de surtar toda hora de refeição. O guia é claro, amoroso e funcionou de verdade com minha filha."</blockquote>
+      <div class="testimonial-author">
+        <div class="avatar">A</div>
+        <div>
+          <strong>Ana Claudia M.</strong>
+          <span>Mãe da Beatriz, 8 meses</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <span class="stars">★★★★★</span>
+      <blockquote>"O cardápio semanal salvou minha vida. Sem ele eu ficava perdida toda semana pensando o que dar pro Lucas."</blockquote>
+      <div class="testimonial-author">
+        <div class="avatar">P</div>
+        <div>
+          <strong>Patricia R.</strong>
+          <span>Mãe do Lucas, 7 meses</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <span class="stars">★★★★★</span>
+      <blockquote>"Meu marido leu junto comigo e a gente finalmente ficou alinhado sobre o que oferecer e como. Valeu cada centavo!"</blockquote>
+      <div class="testimonial-author">
+        <div class="avatar">J</div>
+        <div>
+          <strong>Juliana F.</strong>
+          <span>Mãe da Lara, 6 meses</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ═══════════════════════════════════════════ OFERTA -->
+<section class="pricing-section" id="oferta">
+  <div class="section-header">
+    <span class="section-label">Oferta especial</span>
+    <h2>Invista na saúde do seu bebê</h2>
+    <p>Acesso vitalício ao ebook completo + todos os bônus</p>
+  </div>
+
+  <div class="pricing-card">
+    <span class="popular-tag">Mais completo</span>
+
+    <span class="price-old">De R$ 97,00</span>
+    <div class="price-main">
+      <span class="price-currency">R$</span>
+      <span class="price-value">29</span>
+      <span class="price-cents">,90</span>
+    </div>
+    <span class="price-note">Pagamento único — acesso imediato e vitalício</span>
+
+    <ul class="price-includes">
+      <li><span class="pi-check"></span>Ebook completo "Introdução Alimentar Passo a Passo" (PDF)</li>
+      <li><span class="pi-check"></span>Bônus 1: Cardápio Semanal Inteligente</li>
+      <li><span class="pi-check"></span>Bônus 2: Lista de Compras Estratégica</li>
+      <li><span class="pi-check"></span>Bônus 3: Planner de Refeições Imprimível</li>
+      <li><span class="pi-check"></span>Atualizações futuras incluídas</li>
+    </ul>
+
+    <a href="#" class="btn-cta-big">Quero meu ebook agora →</a>
+
+    <p class="guarantee">🔒 Garantia de 7 dias — se não gostar, devolvemos 100%</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FAQ -->
+<div style="background: var(--warm-white);">
+<section class="faq-section">
+  <div class="section-header">
+    <span class="section-label">Dúvidas frequentes</span>
+    <h2>Ainda tem perguntas?</h2>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Para qual idade este guia é indicado?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">
+        <p>O guia cobre a introdução alimentar do 6º ao 18º mês de vida, com conteúdo específico para cada fase de desenvolvimento.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Funciona para bebês com restrições alimentares?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">
+        <p>O ebook traz um capítulo dedicado a alergias e intolerâncias, com orientações sobre como adaptar o cardápio. Para casos específicos, sempre recomendamos consultar o pediatra ou nutricionista da criança.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>O ebook funciona para BLW e papinhas?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Sim! O guia aborda tanto a alimentação tradicional (papinhas e purês) quanto o método BLW (Baby-Led Weaning), apresentando as diferenças e como combinar os dois se preferir.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Como recebo o material após a compra?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Imediatamente após a confirmação do pagamento, você recebe um e-mail com o link para download do ebook e de todos os bônus em formato PDF, prontos para salvar ou imprimir.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3>Funciona no celular?</h3>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Totalmente! O ebook é em PDF otimizado para leitura em qualquer dispositivo — celular, tablet ou computador. Você pode consultar na cozinha mesma!</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ═══════════════════════════════════════════ FOOTER -->
+<footer>
+  <p style="margin-bottom: 8px;">© 2025 Introdução Alimentar Passo a Passo. Todos os direitos reservados.</p>
+  <p><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a> · <a href="#">Contato</a></p>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky">
+  <a href="#oferta" class="sticky-btn">Garantir meu ebook →</a>
+</div>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-toggle').textContent = '+';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.querySelector('.faq-toggle').textContent = '×';
+  }
+}
+
+window.addEventListener('scroll', () => {
+  const sticky = document.getElementById('sticky');
+  if (window.scrollY > 600) sticky.classList.add('visible');
+  else sticky.classList.remove('visible');
+});
+</script>
+</body>
+</html>
